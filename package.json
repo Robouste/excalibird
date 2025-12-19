@@ -16,5 +16,8 @@
   },
   "dependencies": {
     "excalibur": "0.31.0"
+  },
+  "volta": {
+    "node": "22.12.0"
   }
 }
