@@ -22,9 +22,9 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            which node
-            node -v
-            echo "$PATH"
+            export VOLTA_HOME="$HOME/.volta"
+            export PATH="$VOLTA_HOME/bin:$PATH"
+
             cd ${{ secrets.WORK_DIR }}
             git checkout ${{ vars.MAIN_BRANCH }}
             git pull
