@@ -87,6 +87,7 @@ export class Bird extends Actor {
       this.graphics.use("up");
       this._upAnimation.reset();
       this._downAnimation.reset();
+      Resources.FlapSound.play();
     }
 
     if (!this._isInputActive(engine)) {

@@ -12,6 +12,7 @@ import { Bird } from "../actors/bird.actor";
 import { Ground } from "../actors/ground.actor";
 import { Config } from "../config";
 import { PipeFactory } from "../factories/pipe.factory";
+import { Resources } from "../resources";
 
 export class Level extends Scene {
   public bird = new Bird(this);
@@ -77,6 +78,11 @@ export class Level extends Scene {
     }
   }
 
+  public override onActivate(): void {
+    Resources.BackgroundMusic.loop = true;
+    Resources.BackgroundMusic.play();
+  }
+
   public incrementScore(): void {
     this.scoreLabel.text = `Score: ${++this.score}`;
     this._setBestScore(this.score);
@@ -87,6 +93,7 @@ export class Level extends Scene {
     this.bird.stop();
     this.ground.stop();
     this._showStartInstructions();
+    Resources.FailSound.play();
   }
 
   public reset(): void {
