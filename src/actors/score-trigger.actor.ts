@@ -19,5 +19,6 @@ export class ScoreTrigger extends Actor {
   public override onCollisionStart(): void {
     this._level.incrementScore();
     Resources.ScoreSound.play();
+    this.kill();
   }
 }
