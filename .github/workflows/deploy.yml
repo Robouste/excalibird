@@ -25,5 +25,6 @@ jobs:
             cd ${{ secrets.WORK_DIR }}
             git checkout ${{ vars.MAIN_BRANCH }}
             git pull
+            npm install
             npm run build
             exit

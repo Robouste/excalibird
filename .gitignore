@@ -665,3 +665,6 @@ node_modules/vite/types/package.json
 node_modules/vite/types/internal/cssPreprocessorOptions.d.ts
 node_modules/vite/types/internal/lightningcssOptions.d.ts
 node_modules/vite/types/internal/terserOptions.d.ts
+dist/index.html
+dist/assets/index-BVBfbJ0h.js
+dist/assets/index-BVBfbJ0h.js.map
