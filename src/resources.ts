@@ -5,4 +5,7 @@ export const Resources = {
   PipeImage: new ImageSource("./images/pipe.png", {
     wrapping: ImageWrapping.Clamp,
   }),
+  GroundImage: new ImageSource("./images/ground.png", {
+    wrapping: ImageWrapping.Repeat,
+  }),
 } as const;
