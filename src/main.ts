@@ -1,4 +1,5 @@
-import { Color, DisplayMode, Engine } from "excalibur";
+import { Color, DisplayMode, Engine, Loader } from "excalibur";
+import { Resources } from "./resources";
 import { Level } from "./scenes/level.scene";
 
 const game = new Engine({
@@ -13,6 +14,8 @@ const game = new Engine({
   },
 });
 
-game.start().then(() => {
+const loader = new Loader(Object.values(Resources));
+
+game.start(loader).then(() => {
   game.goToScene("Level");
 });

@@ -1,4 +1,5 @@
-import { Actor, Color, vec, Vector } from "excalibur";
+import { Actor, Color, Engine, vec, Vector } from "excalibur";
+import { Resources } from "../resources";
 
 export class Pipe extends Actor {
   constructor(pos: Vector, public type: "top" | "bottom") {
@@ -13,5 +14,17 @@ export class Pipe extends Actor {
     });
 
     this.on("exitviewport", () => this.kill());
+  }
+
+  public override onInitialize(engine: Engine): void {
+    const pipeEnd = Resources.PipeImage.toSprite();
+    pipeEnd.sourceView.height = 1000;
+    pipeEnd.destSize.height = 1000;
+
+    if (this.type === "top") {
+      pipeEnd.flipVertical = true;
+    }
+
+    this.graphics.use(pipeEnd);
   }
 }
